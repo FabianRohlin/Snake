@@ -136,16 +136,16 @@ def startTheGame():
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP and snake.dy != gridSize:
+                if (event.key == pygame.K_UP or event.key == pygame.K_w) and snake.dy != gridSize:
                     snake.dx = 0
                     snake.dy = -gridSize
-                elif event.key == pygame.K_DOWN and snake.dy != -gridSize:
+                elif (event.key == pygame.K_DOWN or event.key == pygame.K_s) and snake.dy != -gridSize:
                     snake.dx = 0
                     snake.dy = gridSize
-                elif event.key == pygame.K_LEFT and snake.dx != gridSize:
+                elif (event.key == pygame.K_LEFT or event.key == pygame.K_a) and snake.dx != gridSize:
                     snake.dx = -gridSize
                     snake.dy = 0
-                elif event.key == pygame.K_RIGHT and snake.dx != -gridSize:
+                elif (event.key == pygame.K_RIGHT or event.key == pygame.K_d) and snake.dx != -gridSize:
                     snake.dx = gridSize
                     snake.dy = 0
 
