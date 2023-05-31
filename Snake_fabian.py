@@ -129,6 +129,7 @@ def startTheGame():
     screen = pygame.display.set_mode((windowWidth, windowHeight))
     snake = Snake()
     food = Food()
+    delay=0
     running = True
     while running:
 
