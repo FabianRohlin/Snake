@@ -2,6 +2,7 @@ import pygame
 import random
 import pygame_menu
 import csv
+import time
 
 # Set up game variables
 windowWidth = 520
