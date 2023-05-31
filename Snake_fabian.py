@@ -135,19 +135,23 @@ def startTheGame():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            elif event.type == pygame.KEYDOWN:
+            elif event.type == pygame.KEYDOWN and (time.time()-delay)>0.1:
                 if (event.key == pygame.K_UP or event.key == pygame.K_w) and snake.dy != gridSize:
                     snake.dx = 0
                     snake.dy = -gridSize
+                    delay=time.time()
                 elif (event.key == pygame.K_DOWN or event.key == pygame.K_s) and snake.dy != -gridSize:
                     snake.dx = 0
                     snake.dy = gridSize
+                    delay=time.time()
                 elif (event.key == pygame.K_LEFT or event.key == pygame.K_a) and snake.dx != gridSize:
                     snake.dx = -gridSize
                     snake.dy = 0
+                    delay=time.time()
                 elif (event.key == pygame.K_RIGHT or event.key == pygame.K_d) and snake.dx != -gridSize:
                     snake.dx = gridSize
                     snake.dy = 0
+                    delay=time.time()
 
         # Updating the snake object
         snake.update()
